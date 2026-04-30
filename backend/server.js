@@ -20,7 +20,7 @@ let app = express();
 
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: "https://mearn-lead-deshboard.vercel.app",
     methods: ["GET", "POST", "DELETE", "PUT"],
     allowedHeaders: [
       "Content-Type",
