@@ -7,7 +7,9 @@ export const allLeads = createAsyncThunk(
   "api/allleads",
   async (_, { rejectWithValue }) => {
     try {
-      const { data } = await axios.get("http://localhost:3000/api/leads");
+      const { data } = await axios.get(
+        "https://mearn-lead-deshboard.onrender.com/api/leads"
+      );
       return data;
     } catch (err) {
       return rejectWithValue(err.response.data);
@@ -24,7 +26,7 @@ export const createLeads = createAsyncThunk(
   async (form, { rejectWithValue }) => {
     try {
       const data = await axios.post(
-        "http://localhost:3000/api/leads/new",
+        "https://mearn-lead-deshboard.onrender.com/api/leads/new",
         form
       );
       return data;
@@ -40,7 +42,9 @@ export const featchSingleLeads = createAsyncThunk(
   "api/featchSingle",
   async (id, { rejectWithValue }) => {
     try {
-      const { data } = await axios.get(`http://localhost:3000/api/leads/${id}`);
+      const { data } = await axios.get(
+        `https://mearn-lead-deshboard.onrender.com/api/leads/${id}`
+      );
       return data;
     } catch (err) {
       return rejectWithValue(err.response.data);
@@ -55,7 +59,7 @@ export const updateLeada = createAsyncThunk(
   async ({ formData, id }, { rejectWithValue }) => {
     try {
       const { data } = await axios.put(
-        `http://localhost:3000/api/leads/${id}`,
+        `https://mearn-lead-deshboard.onrender.com/api/leads/${id}`,
         formData
       );
       return data;
@@ -74,7 +78,7 @@ export const deleteLeads = createAsyncThunk(
   async (id, { rejectWithValue }) => {
     try {
       let { data } = await axios.delete(
-        `http://localhost:3000/api/leads/${id}/delete`
+        `https://mearn-lead-deshboard.onrender.com/api/leads/${id}/delete`
       );
       return data;
     } catch (err) {
